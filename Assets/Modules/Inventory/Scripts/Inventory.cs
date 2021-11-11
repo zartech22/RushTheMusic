@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aloha
 {
-    public class Inventory
+    public class Inventory  : Singleton<Inventory>
     {
 
         private Queue<Item> items = new Queue<Item>();
@@ -31,6 +31,11 @@ namespace Aloha
         public Queue<Item> GetItems()
         {
             return this.items;
+        }
+
+        public int getMaxItems()
+        {
+            return this.maxItem;
         }
     }
 }
