@@ -10,8 +10,10 @@ namespace Aloha
         // Start is called before the first frame update
         void Start()
         {
-            int nbItems = 3;
-            //int nbItems = Inventory.Instance.getMaxItems();
+            
+            int nbItems = Inventory.Instance.getMaxItems();
+
+            Queue<Item> items = Inventory.Instance.GetItems();
 
             GameObject horizontalLayout = this.gameObject.transform.GetChild(1).gameObject;
 
@@ -20,6 +22,7 @@ namespace Aloha
 
 
 
+            // Creation of the dynamic interface
             if (nbItems == 1)
             {
                 Debug.Log("nbItems == 1");
@@ -39,8 +42,18 @@ namespace Aloha
 
             for (int i=0; i < nbItems; i++)
             {
-                //Instantiate(cube, )
-                Debug.Log("bite");
+                Item item = items.Dequeue();
+                if(item != null)
+                {
+                    if (i == 0)
+                    {
+                        this.gameObject.transform.GetChild(0).GetComponent<Image>().color = Color.red;
+                    }
+                    else
+                    {
+                        this.gameObject.transform.GetChild(1).transform.GetChild(i - 1).GetComponent<Image>().color = Color.blue;
+                    }
+                }
             }
         }
 
