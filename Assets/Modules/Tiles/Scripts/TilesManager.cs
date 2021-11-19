@@ -122,5 +122,10 @@ namespace Aloha
         {
             GameObject.Destroy(tilesContainer);
         }
+
+        public void ChangeTileSpeed(float tileSpeed)
+        {
+           this.tileSpeed = tileSpeed;
+        }
     }
 }

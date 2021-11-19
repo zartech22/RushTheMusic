@@ -29,6 +29,7 @@ namespace Aloha
         generic = 0,
         lancer = 1,
         assassin = 2,
-        wyrmling = 3
+        wyrmling = 3,
+        wall = 4
     }
 }
