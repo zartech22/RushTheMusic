@@ -17,8 +17,9 @@ namespace Aloha
 
         protected override IEnumerator AI()
         {
+            Debug.Log("AI Wall");
             TilesManager.Instance.ChangeTileSpeed(0);
-            return null;
+            yield return null;
         }
 
         public override void Die()
